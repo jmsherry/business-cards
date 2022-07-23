@@ -21,9 +21,14 @@ clear();
 // const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
-console.log(util.inspect(argv, { showHidden: true, depth: 10, colors: true }));
+// console.log(util.inspect(argv, { showHidden: true, depth: 10, colors: true }));
 const person = argv[2];
-console.log("🚀 ~ file: card.js ~ line 20 ~ person", person);
+
+if (!person) {
+  console.error("No 'person' provided!");
+  process.exit(1);
+}
+// console.log("🚀 ~ file: card.js ~ line 20 ~ person", person);
 
 //! importing User Data from data.json
 const res = fs.readFileSync(path.resolve(__dirname, "data.json"));
@@ -94,15 +99,15 @@ const data = {
   linkedin:
     chalk.gray("https://linkedin.com/in/") + chalk.blue(`${linkedin_username}`),
   // web: chalk.cyan(`${personal_site}`),
-//   npx: chalk.red("npx") + " " + chalk.white(`${npx_card_handle}`),
+  //   npx: chalk.red("npx") + " " + chalk.white(`${npx_card_handle}`),
 
   labelWork: chalk.white.bold("       Title:"),
   labelEmail: chalk.white.bold("       Email:"),
-//   labelTwitter: chalk.white.bold("    Twitter:"),
-//   labelGitHub: chalk.white.bold("     GitHub:"),
+  //   labelTwitter: chalk.white.bold("    Twitter:"),
+  //   labelGitHub: chalk.white.bold("     GitHub:"),
   labelLinkedIn: chalk.white.bold("    LinkedIn:"),
-//   labelWeb: chalk.white.bold("        Web:"),
-//   labelCard: chalk.white.bold("       Card:"),
+  //   labelWeb: chalk.white.bold("        Web:"),
+  //   labelCard: chalk.white.bold("       Card:"),
 };
 
 const me = boxen(
