@@ -1,6 +1,6 @@
 {
     "name": "the-jump-business-cards",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "author": "James Sherry",
     "description": "Business cards for { The Jump } staff",
     "type": "module",
