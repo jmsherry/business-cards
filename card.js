@@ -36,6 +36,11 @@ const user_data = JSON.parse(res).find(
   ({ npx_card_handle }) => npx_card_handle === person
 );
 
+if(!user_data) {
+  console.error("Person not found!");
+  process.exit(1);
+}
+
 const { name, email, linkedin_username, npx_card_handle, job_title } =
   user_data;
 
